@@ -1,0 +1,90 @@
+
+ion-app {
+    display: flex;
+    flex-direction: row;
+}
+
+div {
+    height: 100%;
+}
+
+.sidebar {
+    max-width: 25%;
+}
+
+.main-content {
+    width: 75%;
+}
+
+
+.daily-forecast {
+    width: 90%;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.thumbnail {
+    width: 80px;
+    height: 80px;
+}
+
+ion-label {
+    padding-top: 1.3rem;
+    padding-left: 1rem;
+    font-size: 24px;
+    // font-family: 'Nothing', normal !important;
+}
+
+
+.current-weather {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 0 0 1rem 1rem;
+    border-radius: 0 0 0 5px;
+}
+
+.big-thumbnail {
+    width: 250px;
+
+}
+
+.current-weather ion-card-title {
+    padding-top: 3.5rem;
+    font-size: 125px;
+}
+
+
+
+.current-conditions {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: auto;
+}
+
+.conditions {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 180px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.hourly-forecast {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow: auto;
+}
+
+.hourly-stats {
+    padding: .5rem 1rem .5rem 1rem;
+}
+
+.conditions ion-card-content {
+    margin-top: 3.5rem;
+}
