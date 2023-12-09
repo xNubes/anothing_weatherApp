@@ -30,16 +30,22 @@ div {
     height: 80px;
 }
 
-ion-label {
+.daily-label {
+    padding-top: 1.3rem;
+    padding-left: 1rem;
+    font-size: 36px;
+    font-family: 'Nothing', normal !important;
+}
+
+.small-header {
     padding-top: 1.3rem;
     padding-left: 1rem;
     font-size: 24px;
-    font-weight: bolder;
-    // font-family: 'Nothing', normal !important;
+    font-family: 'Inter', normal !important;
 }
 
 ion-card-title {
-    font-weight: bold;
+    font-family: 'Nothing', normal !important;
 }
 
 .current-weather {
@@ -56,8 +62,8 @@ ion-card-title {
 }
 
 .current-weather ion-card-title {
-    padding-top: 3.5rem;
-    font-size: 125px;
+    padding-top: 3rem;
+    font-size: 150px;
 }
 
 .current-conditions {
@@ -92,7 +98,9 @@ ion-card-title {
 }
 
 .conditions ion-card-content {
-    margin-top: 3.5rem;
+    margin-top: 2.5rem;
+    font-size: 32px;
+    font-family: 'Anothing', sans-serif !important;
 }
 
 ::-webkit-scrollbar {
