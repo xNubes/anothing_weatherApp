@@ -10,7 +10,7 @@ export class ApiaccuService {
 
   getWeather(location: string){
     return this.http.get(
-        'http://dataservice.accuweather.com/locations/v1/search?q='+ location + '&apikey={a1kyetxsuUxLFoWdzRsWEehgTSHV7eJR}'
+        'http://dataservice.accuweather.com/locations/v1/search?q='+ location + '&apikey=a1kyetxsuUxLFoWdzRsWEehgTSHV7eJR'
       );
   }
 
