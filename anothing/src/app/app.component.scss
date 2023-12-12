@@ -4,6 +4,10 @@ ion-app {
     flex-direction: row;
 }
 
+.search-button {
+    margin-right: 0.5rem;
+}
+
 div {
     height: 100%;
 }
@@ -54,6 +58,7 @@ ion-card-title {
     justify-content: space-evenly;
     margin: 0 0 1rem 1rem;
     border-radius: 0 0 0 5px;
+    height: 36.5%;
 }
 
 .big-thumbnail {
@@ -105,4 +110,9 @@ ion-card-title {
 
 ::-webkit-scrollbar {
     width: 1px;
+  }
+
+  .text-end {
+    display: flex;
+    justify-content: end;
   }

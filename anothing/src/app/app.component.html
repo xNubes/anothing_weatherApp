@@ -1,125 +1,132 @@
 <ion-app>
   <ion-content color="secondary" class="sidebar">
-        <ion-searchbar color="light" class="custom" show-clear-button="focus" showCancelButton="focus"></ion-searchbar>
-            
-            <ion-card color="dark" class="daily-forecast">
-                <img class="thumbnail" src="\assets\cloud-sun.png">
-              <ion-label class="daily-label">23°C</ion-label>
-            </ion-card>
+    <form (ngSubmit)="sendToAPIAccu(weatherSearchForm.value)" [formGroup]="weatherSearchForm">
+      <div class="form-group">
+        <ion-searchbar color="light" placeholder="Location" class="form-control" aria-describedby="weatherLocation" show-clear-button="focus" showCancelButton="focus" formControlName="location"></ion-searchbar>
+      </div>
+      <div class="text-end">
+        <ion-button class="search-button" type="submit" color="tertiary">Search</ion-button>
+      </div>
+    </form>
 
-            <ion-card color="dark" class="daily-forecast">
-                <img class="thumbnail" src="\assets\cloud-sun.png">
-              <ion-label class="daily-label">23°C</ion-label>
-            </ion-card>
+    <ion-card color="dark" class="daily-forecast">
+      <img class="thumbnail" src="\assets\cloud-sun.png">
+      <ion-label class="daily-label">23°C</ion-label>
+    </ion-card>
 
-            <ion-card color="dark" class="daily-forecast">
-                <img class="thumbnail" src="\assets\cloud-sun.png">
-              <ion-label class="daily-label">23°C</ion-label>
-            </ion-card>
+    <ion-card color="dark" class="daily-forecast">
+      <img class="thumbnail" src="\assets\cloud-sun.png">
+      <ion-label class="daily-label">23°C</ion-label>
+    </ion-card>
 
-            <ion-card color="dark" class="daily-forecast">
-                <img class="thumbnail" src="\assets\cloud-sun.png">
-              <ion-label class="daily-label">23°C</ion-label>
-            </ion-card>
+    <ion-card color="dark" class="daily-forecast">
+      <img class="thumbnail" src="\assets\cloud-sun.png">
+      <ion-label class="daily-label">23°C</ion-label>
+    </ion-card>
 
-            <ion-card color="dark" class="daily-forecast">
-                <img class="thumbnail" src="\assets\cloud-sun.png">
-              <ion-label class="daily-label">23°C</ion-label>
-            </ion-card>
+    <ion-card color="dark" class="daily-forecast">
+      <img class="thumbnail" src="\assets\cloud-sun.png">
+      <ion-label class="daily-label">23°C</ion-label>
+    </ion-card>
+
+    <ion-card color="dark" class="daily-forecast">
+      <img class="thumbnail" src="\assets\cloud-sun.png">
+      <ion-label class="daily-label">23°C</ion-label>
+    </ion-card>
   </ion-content>
   <ion-content color="secondary" class="main-content">
     <ion-card color="dark" class="current-weather">
       <img class="big-thumbnail" src="\assets\cloud-sun.png">
       <ion-card-title>23°C</ion-card-title>
     </ion-card>
-      <ion-label class="small-header" color="dark">Hourly Forecast</ion-label>
-      <ion-card color="dark" class="hourly-forecast">
-        <ion-card-content class="hourly-stats">
-          <ion-card-title>22°C</ion-card-title>
-          <ion-thumbnail>
-            <img src="\assets\cloud-sun.png">
-          </ion-thumbnail>
-          <ion-card-title>17:00</ion-card-title>
-        </ion-card-content>
-        <ion-card-content class="hourly-stats">
-          <ion-card-title>22°C</ion-card-title>
-          <ion-thumbnail>
-            <img src="\assets\cloud-sun.png">
-          </ion-thumbnail>
-          <ion-card-title>17:00</ion-card-title>
-        </ion-card-content>
-        <ion-card-content class="hourly-stats">
-          <ion-card-title>22°C</ion-card-title>
-          <ion-thumbnail>
-            <img src="\assets\cloud-sun.png">
-          </ion-thumbnail>
-          <ion-card-title>17:00</ion-card-title>
-        </ion-card-content>
-        <ion-card-content class="hourly-stats">
-          <ion-card-title>22°C</ion-card-title>
-          <ion-thumbnail>
-            <img src="\assets\cloud-sun.png">
-          </ion-thumbnail>
-          <ion-card-title>17:00</ion-card-title>
-        </ion-card-content>
-        <ion-card-content class="hourly-stats">
-          <ion-card-title>22°C</ion-card-title>
-          <ion-thumbnail>
-            <img src="\assets\cloud-sun.png">
-          </ion-thumbnail>
-          <ion-card-title>17:00</ion-card-title>
-        </ion-card-content>
-        <ion-card-content class="hourly-stats">
-          <ion-card-title>22°C</ion-card-title>
-          <ion-thumbnail>
-            <img src="\assets\cloud-sun.png">
-          </ion-thumbnail>
-          <ion-card-title>17:00</ion-card-title>
-        </ion-card-content>
-        <ion-card-content class="hourly-stats">
-          <ion-card-title>22°C</ion-card-title>
-          <ion-thumbnail>
-            <img src="\assets\cloud-sun.png">
-          </ion-thumbnail>
-          <ion-card-title>17:00</ion-card-title>
-        </ion-card-content>
-        <ion-card-content class="hourly-stats">
-          <ion-card-title>22°C</ion-card-title>
-          <ion-thumbnail>
-            <img src="\assets\cloud-sun.png">
-          </ion-thumbnail>
-          <ion-card-title>17:00</ion-card-title>
-        </ion-card-content>
-        <ion-card-content class="hourly-stats">
-          <ion-card-title>22°C</ion-card-title>
-          <ion-thumbnail>
-            <img src="\assets\cloud-sun.png">
-          </ion-thumbnail>
-          <ion-card-title>17:00</ion-card-title>
-        </ion-card-content>
-        <ion-card-content class="hourly-stats">
-          <ion-card-title>22°C</ion-card-title>
-          <ion-thumbnail>
-            <img src="\assets\cloud-sun.png">
-          </ion-thumbnail>
-          <ion-card-title>17:00</ion-card-title>
-        </ion-card-content>
-        
+    <ion-label class="small-header" color="dark">Hourly Forecast</ion-label>
+    <ion-card color="dark" class="hourly-forecast">
+      <ion-card-content class="hourly-stats">
+        <ion-card-title>22°C</ion-card-title>
+        <ion-thumbnail>
+          <img src="\assets\cloud-sun.png">
+        </ion-thumbnail>
+        <ion-card-title>17:00</ion-card-title>
+      </ion-card-content>
+      <ion-card-content class="hourly-stats">
+        <ion-card-title>22°C</ion-card-title>
+        <ion-thumbnail>
+          <img src="\assets\cloud-sun.png">
+        </ion-thumbnail>
+        <ion-card-title>17:00</ion-card-title>
+      </ion-card-content>
+      <ion-card-content class="hourly-stats">
+        <ion-card-title>22°C</ion-card-title>
+        <ion-thumbnail>
+          <img src="\assets\cloud-sun.png">
+        </ion-thumbnail>
+        <ion-card-title>17:00</ion-card-title>
+      </ion-card-content>
+      <ion-card-content class="hourly-stats">
+        <ion-card-title>22°C</ion-card-title>
+        <ion-thumbnail>
+          <img src="\assets\cloud-sun.png">
+        </ion-thumbnail>
+        <ion-card-title>17:00</ion-card-title>
+      </ion-card-content>
+      <ion-card-content class="hourly-stats">
+        <ion-card-title>22°C</ion-card-title>
+        <ion-thumbnail>
+          <img src="\assets\cloud-sun.png">
+        </ion-thumbnail>
+        <ion-card-title>17:00</ion-card-title>
+      </ion-card-content>
+      <ion-card-content class="hourly-stats">
+        <ion-card-title>22°C</ion-card-title>
+        <ion-thumbnail>
+          <img src="\assets\cloud-sun.png">
+        </ion-thumbnail>
+        <ion-card-title>17:00</ion-card-title>
+      </ion-card-content>
+      <ion-card-content class="hourly-stats">
+        <ion-card-title>22°C</ion-card-title>
+        <ion-thumbnail>
+          <img src="\assets\cloud-sun.png">
+        </ion-thumbnail>
+        <ion-card-title>17:00</ion-card-title>
+      </ion-card-content>
+      <ion-card-content class="hourly-stats">
+        <ion-card-title>22°C</ion-card-title>
+        <ion-thumbnail>
+          <img src="\assets\cloud-sun.png">
+        </ion-thumbnail>
+        <ion-card-title>17:00</ion-card-title>
+      </ion-card-content>
+      <ion-card-content class="hourly-stats">
+        <ion-card-title>22°C</ion-card-title>
+        <ion-thumbnail>
+          <img src="\assets\cloud-sun.png">
+        </ion-thumbnail>
+        <ion-card-title>17:00</ion-card-title>
+      </ion-card-content>
+      <ion-card-content class="hourly-stats">
+        <ion-card-title>22°C</ion-card-title>
+        <ion-thumbnail>
+          <img src="\assets\cloud-sun.png">
+        </ion-thumbnail>
+        <ion-card-title>17:00</ion-card-title>
+      </ion-card-content>
+
+    </ion-card>
+    <ion-label class="small-header" color="dark">Current Conditions</ion-label>
+    <div color="secondary" class="current-conditions">
+      <ion-card color="tertiary" class="conditions">
+        <ion-card-content>8 km/h</ion-card-content>
       </ion-card>
-      <ion-label class="small-header" color="dark">Current Conditions</ion-label>
-      <div color="secondary" class="current-conditions">
-        <ion-card color="tertiary" class="conditions">
-          <ion-card-content>8 km/h</ion-card-content>
-        </ion-card>
-        <ion-card color="dark" class="conditions">
-          <ion-card-content>69%</ion-card-content>
-        </ion-card>
-        <ion-card color="dark" class="conditions">
-          <ion-card-content>UV</ion-card-content>
-        </ion-card>
-        <ion-card color="dark" class="conditions">
-          <ion-card-content>8 km/h</ion-card-content>
-        </ion-card>
-      </div>
+      <ion-card color="dark" class="conditions">
+        <ion-card-content>69%</ion-card-content>
+      </ion-card>
+      <ion-card color="dark" class="conditions">
+        <ion-card-content>UV</ion-card-content>
+      </ion-card>
+      <ion-card color="dark" class="conditions">
+        <ion-card-content>8 km/h</ion-card-content>
+      </ion-card>
+    </div>
   </ion-content>
 </ion-app>
