@@ -13,19 +13,19 @@ interface WeatherForm {
 })
 export class AppComponent {
   public weatherSearchForm!: FormGroup;
+  public weatherLocation: any;
 
   constructor(
     private formBuilder: FormBuilder,
     private apiaccuService: ApiaccuService
     ) {}
 ngOnInit() {
-  
   this.weatherSearchForm = this.formBuilder.group({
     location: ['']
   });
 }
 sendToAPIAccu(formValues: WeatherForm ) {
-  this.apiaccuService.getWeather(formValues.location)
-  .subscribe(data => console.log(data))
+  this.apiaccuService.getLocationKey(formValues.location).subscribe(data => this.weatherLocation = data); 
+  console.log(this.weatherLocation);
 }
 }
