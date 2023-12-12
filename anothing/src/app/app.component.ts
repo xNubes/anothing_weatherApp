@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ApiaccuService } from './apiaccu.service';
 
 interface WeatherForm {
   location: string;
@@ -13,9 +14,10 @@ interface WeatherForm {
 export class AppComponent {
   public weatherSearchForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
-    
-}
+  constructor(
+    private formBuilder: FormBuilder,
+    private apiaccuService: ApiaccuService
+    ) {}
 ngOnInit() {
   
   this.weatherSearchForm = this.formBuilder.group({
@@ -23,6 +25,7 @@ ngOnInit() {
   });
 }
 sendToAPIAccu(formValues: WeatherForm ) {
-  console.log(formValues);
+  this.apiaccuService.getWeather(formValues.location)
+  .subscribe(data => console.log(data))
 }
 }
