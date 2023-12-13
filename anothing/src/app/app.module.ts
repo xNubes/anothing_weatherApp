@@ -21,7 +21,7 @@ import { AppRoutingModule } from './app-routing.module';
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, 
-    ApiaccuService
+    ApiaccuService, AppComponent
   ],
   bootstrap: [AppComponent],
 })

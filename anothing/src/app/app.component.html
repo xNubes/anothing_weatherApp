@@ -8,7 +8,6 @@
         <ion-button class="search-button" type="submit" color="tertiary">Search</ion-button>
       </div>
     </form>
-    <p>Current Location Key: {{this.weatherLocation?.[0].Key}}</p>
     <ion-card color="dark" class="daily-forecast">
       <img class="thumbnail" src="\assets\cloud-sun.png">
       <ion-label class="daily-label">23°C</ion-label>
@@ -37,7 +36,7 @@
   <ion-content color="secondary" class="main-content">
     <ion-card color="dark" class="current-weather">
       <img class="big-thumbnail" src="\assets\cloud-sun.png">
-      <ion-card-title>23°C</ion-card-title>
+      <ion-card-title>{{this.currentConditions.[0].temperature.imperial}}°F</ion-card-title>
     </ion-card>
     <ion-label class="small-header" color="dark">Hourly Forecast</ion-label>
     <ion-card color="dark" class="hourly-forecast">
