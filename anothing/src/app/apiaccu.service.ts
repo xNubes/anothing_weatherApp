@@ -17,13 +17,19 @@ export class ApiaccuService {
 
   getTwelveHourData(locationKey: string): Observable<any> {
     return this.http.get<any>(
-      'http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/' + locationKey + '?apikey=a1kyetxsuUxLFoWdzRsWEehgTSHV7eJR'
+      'http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/' + locationKey + '?apikey=a1kyetxsuUxLFoWdzRsWEehgTSHV7eJR&details=true'
     );
   }
 
   getCurrentData(locationKey: string): Observable<any> {
     return this.http.get<any>(
-      'http://dataservice.accuweather.com/currentconditions/v1/' + locationKey + '?apikey=a1kyetxsuUxLFoWdzRsWEehgTSHV7eJR'
+      'http://dataservice.accuweather.com/currentconditions/v1/' + locationKey + '?apikey=a1kyetxsuUxLFoWdzRsWEehgTSHV7eJR&details=true'
+    );
+  }
+  
+  getFiveDayData(locationKey: string): Observable<any> {
+    return this.http.get<any>(
+      'http://dataservice.accuweather.com/forecasts/v1/daily/5day/' + locationKey + '?apikey=a1kyetxsuUxLFoWdzRsWEehgTSHV7eJR'
     );
   }
 

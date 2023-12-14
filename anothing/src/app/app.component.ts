@@ -23,11 +23,13 @@ export class AppComponent {
     private formBuilder: FormBuilder,
     private apiaccuService: ApiaccuService
     ) {}
+
 ngOnInit() {
   this.weatherSearchForm = this.formBuilder.group({
     location: ['']
   });
 }
+
 sendToAPIAccu(formValues: WeatherForm ) {
   this.apiaccuService.getLocationKey(formValues.location).subscribe((data) => {
     this.weatherLocation = data
@@ -35,9 +37,10 @@ sendToAPIAccu(formValues: WeatherForm ) {
     console.log(this.weatherLocation);
 
     if (this.locationKey !== undefined && this.locationKey !== '') {
-      console.log('LocationKey is not empty');
+      console.log('LocationKey is not empty:' + this.locationKey);
       this.twelveHourData();
       this.currentData();
+      this.fiveDayData();
     }
   
   },
@@ -48,6 +51,7 @@ sendToAPIAccu(formValues: WeatherForm ) {
   ); 
 
 }
+
 twelveHourData() {
   this.apiaccuService.getTwelveHourData(this.locationKey).subscribe((data: any) => {
     this.twelveHourForecast = data;
@@ -59,13 +63,13 @@ twelveHourData() {
   }
   
   );
-
-
 }
+
 currentData() {
   this.apiaccuService.getCurrentData(this.locationKey).subscribe((data: any) => {
     this.currentConditions = data;
     console.log(this.currentConditions);
+    console.log(this.currentConditions?.[0].Temperature.Imperial.Value);
   },
 
   (error) => {
@@ -73,7 +77,19 @@ currentData() {
   }
   
   );
+}
 
+fiveDayData() {
+  this.apiaccuService.getFiveDayData(this.locationKey).subscribe((data: any) => {
+    this.currentConditions = data;
+    console.log(this.fiveDayForecast);
+    // console.log(this.fiveDayForecast?.[0].Temperature.Value);
+  },
 
+  (error) => {
+    console.error('Error 5 day weather data:', error);
+  }
+  
+  );
 }
 }
