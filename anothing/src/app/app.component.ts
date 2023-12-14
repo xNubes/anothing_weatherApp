@@ -81,9 +81,9 @@ currentData() {
 
 fiveDayData() {
   this.apiaccuService.getFiveDayData(this.locationKey).subscribe((data: any) => {
-    this.currentConditions = data;
+    this.fiveDayForecast = data;
     console.log(this.fiveDayForecast);
-    // console.log(this.fiveDayForecast?.[0].Temperature.Value);
+    console.log(this.fiveDayForecast?.DailyForecasts[0].Temperature.Maximum.Value);
   },
 
   (error) => {

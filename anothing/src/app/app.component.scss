@@ -79,12 +79,12 @@ ion-card-title {
     height: auto;
 }
 
-.conditions {
+.condition-one, .condition-two, .condition-three, .condition-four {
     width: 10rem;
     height: 10rem;
     border-radius: 180px;
     display: flex;
-    justify-content: space-around;
+    align-items: center;
 }
 
 .hourly-forecast {
@@ -102,8 +102,27 @@ ion-card-title {
     align-items: center;
 }
 
-.conditions ion-card-content {
-    margin-top: 2.5rem;
+.condition-one ion-card-content {
+    margin-left: 1.75rem;
+    font-size: 32px;
+    font-family: 'Anothing', sans-serif !important;
+}
+
+.condition-two ion-card-content {
+    margin-left: 2rem;
+    font-size: 32px;
+    font-family: 'Anothing', sans-serif !important;
+}
+
+.condition-three ion-card-content {
+    margin-left: 2.5rem;
+    text-align: center;
+    font-size: 32px;
+    font-family: 'Anothing', sans-serif !important;
+}
+
+.condition-four ion-card-content {
+    text-align: center;
     font-size: 32px;
     font-family: 'Anothing', sans-serif !important;
 }
