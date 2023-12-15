@@ -130,17 +130,22 @@
     <ion-label class="small-header" color="dark">Current Conditions</ion-label>
     <div color="secondary" class="current-conditions">
       <ion-card color="tertiary" class="condition-one">
-        <ion-card-content>{{this.currentConditions?.[0].Wind.Speed.Imperial.Value}} m/h</ion-card-content>
+        <ion-card-content class="top-content">{{this.currentConditions?.[0].Wind.Speed.Imperial.Value}} m/h</ion-card-content>
+        <ion-thumbnail>
+          <img class="compass" [ngStyle]="{'transform': 'rotate' + '(' + windDirection + 'deg)'}" src="\assets\north.png">
+        </ion-thumbnail>
       </ion-card>
       <ion-card color="dark" class="condition-two">
-        <ion-card-content>{{this.currentConditions?.[0].RelativeHumidity}}%</ion-card-content>
+        <ion-card-content class="top-content">{{this.currentConditions?.[0].RelativeHumidity}}%</ion-card-content>
       </ion-card>
       <ion-card color="dark" class="condition-three">
-        <ion-card-content>UV {{this.currentConditions?.[0].UVIndex}}</ion-card-content>
-        <ion-card-content></ion-card-content>
+        <ion-card-content class="top-content">UV</ion-card-content>
+        <ion-card-content>{{this.currentConditions?.[0].UVIndex}}</ion-card-content>
       </ion-card>
       <ion-card color="dark" class="condition-four">
-        <ion-card-content>{{this.currentConditions?.[0].Pressure.Imperial.Value}} {{this.currentConditions?.[0].Pressure.Imperial.Unit}}</ion-card-content>
+        <ion-card-content class="top-content">{{this.currentConditions?.[0].Pressure.Imperial.Value}}</ion-card-content>
+        <ion-card-content>{{this.currentConditions?.[0].Pressure.Imperial.Unit}}</ion-card-content>
+
       </ion-card>
     </div>
   </ion-content>

@@ -18,6 +18,7 @@ export class AppComponent {
   public currentConditions: any;
   public fiveDayForecast: any;
   public twelveHourForecast: any;
+  public windDirection: number = 0;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -70,6 +71,9 @@ currentData() {
     this.currentConditions = data;
     console.log(this.currentConditions);
     console.log(this.currentConditions?.[0].Temperature.Imperial.Value);
+    this.windDirection = this.currentConditions?.[0].Wind.Direction.Degrees;
+    console.log('Winddirection' + this.windDirection);
+
   },
 
   (error) => {

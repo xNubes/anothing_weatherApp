@@ -88,6 +88,7 @@ ion-card-title {
     height: 10rem;
     border-radius: 180px;
     display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
@@ -101,34 +102,39 @@ ion-card-title {
 .hourly-stats {
     padding: .5rem 1rem .5rem 1rem;
     display: flex;
-    justify-content: space-around;
+    // justify-content: space-around;
     flex-direction: column;
     align-items: center;
 }
 
 .condition-one ion-card-content {
-    margin-left: 1.75rem;
     font-size: 32px;
+    padding: 0;
     font-family: 'Anothing', sans-serif !important;
 }
 
 .condition-two ion-card-content {
-    margin-left: 2rem;
     font-size: 32px;
+    padding: 0;
     font-family: 'Anothing', sans-serif !important;
 }
 
 .condition-three ion-card-content {
-    margin-left: 2.5rem;
     text-align: center;
+    padding: 0;
     font-size: 32px;
     font-family: 'Anothing', sans-serif !important;
 }
 
 .condition-four ion-card-content {
     text-align: center;
+    padding: 0;
     font-size: 32px;
     font-family: 'Anothing', sans-serif !important;
+}
+
+.top-content {
+    margin-top: 2rem;
 }
 
 ::-webkit-scrollbar {
