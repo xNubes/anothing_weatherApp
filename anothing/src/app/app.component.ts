@@ -19,6 +19,7 @@ export class AppComponent {
   public fiveDayForecast: any;
   public twelveHourForecast: any;
   public windDirection: number = 0;
+  public suffix: string = ".png";
 
   constructor(
     private formBuilder: FormBuilder,
