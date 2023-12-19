@@ -11,27 +11,27 @@
 
     <ion-card *ngIf="fiveDayForecast" color="dark" class="daily-forecast">
         <img class="thumbnail" src= {{weatherImages[this.fiveDayForecast?.DailyForecasts[0].Day.Icon]}}>
-      <ion-label class="daily-label">{{this.fiveDayForecast?.DailyForecasts[0].Temperature.Maximum.Value}}°{{this.fiveDayForecast?.DailyForecasts[0].Temperature.Maximum.Unit}}</ion-label>
+      <ion-label class="daily-label">{{this.dayOneForecast | number: '1.0-0'}}°C</ion-label>
     </ion-card>
 
     <ion-card *ngIf="fiveDayForecast" color="dark" class="daily-forecast">
       <img class="thumbnail" src= {{weatherImages[this.fiveDayForecast?.DailyForecasts[1].Day.Icon]}}>
-      <ion-label class="daily-label">{{this.fiveDayForecast?.DailyForecasts[1].Temperature.Maximum.Value}}°{{this.fiveDayForecast?.DailyForecasts[1].Temperature.Maximum.Unit}}</ion-label>
+      <ion-label class="daily-label">{{this.dayTwoForecast | number: '1.0-0'}}°C</ion-label>
     </ion-card>
 
     <ion-card *ngIf="fiveDayForecast" color="dark" class="daily-forecast">
       <img class="thumbnail" src= {{weatherImages[this.fiveDayForecast?.DailyForecasts[2].Day.Icon]}}>
-      <ion-label class="daily-label">{{this.fiveDayForecast?.DailyForecasts[2].Temperature.Maximum.Value}}°{{this.fiveDayForecast?.DailyForecasts[2].Temperature.Maximum.Unit}}</ion-label>
+      <ion-label class="daily-label">{{this.dayThreeForecast | number: '1.0-0'}}°C</ion-label>
     </ion-card>
 
     <ion-card *ngIf="fiveDayForecast" color="dark" class="daily-forecast">
       <img class="thumbnail" src= {{weatherImages[this.fiveDayForecast?.DailyForecasts[3].Day.Icon]}}>
-      <ion-label class="daily-label">{{this.fiveDayForecast?.DailyForecasts[3].Temperature.Maximum.Value}}°{{this.fiveDayForecast?.DailyForecasts[3].Temperature.Maximum.Unit}}</ion-label>
+      <ion-label class="daily-label">{{this.dayFourForecast | number: '1.0-0'}}°C</ion-label>
     </ion-card>
 
     <ion-card *ngIf="fiveDayForecast" color="dark" class="daily-forecast">
       <img class="thumbnail" src= {{weatherImages[this.fiveDayForecast?.DailyForecasts[4].Day.Icon]}}>
-      <ion-label class="daily-label">{{this.fiveDayForecast?.DailyForecasts[4].Temperature.Maximum.Value}}°{{this.fiveDayForecast?.DailyForecasts[4].Temperature.Maximum.Unit}}</ion-label>
+      <ion-label class="daily-label">{{this.dayFiveForecast | number: '1.0-0'}}°C</ion-label>
     </ion-card>
   </ion-content>
 
@@ -46,13 +46,13 @@
     </form>
     <ion-card *ngIf="currentConditions" color="dark" class="current-weather">
       <img class="big-thumbnail" src= {{weatherImages[this.currentConditions?.[0].WeatherIcon]}}>
-      <ion-card-title>{{this.currentConditions?.[0].Temperature.Imperial.Value}}°{{this.currentConditions?.[0].Temperature.Imperial.Unit}}</ion-card-title>
+      <ion-card-title>{{this.currentConditions?.[0].Temperature.Metric.Value | number: '1.0-0'}}°{{this.currentConditions?.[0].Temperature.Metric.Unit}}</ion-card-title>
     </ion-card>
 
     <ion-label *ngIf="twelveHourForecast" class="small-header" color="dark">Hourly Forecast</ion-label>
     <ion-card *ngIf="twelveHourForecast" color="dark" class="hourly-forecast">
       <ion-card-content class="hourly-stats">
-        <ion-card-title>{{this.twelveHourForecast?.[0].Temperature.Value}}°{{this.twelveHourForecast?.[0].Temperature.Unit}}</ion-card-title>
+        <ion-card-title>{{this.hourOneForecast | number: '1.0-0'}}°C</ion-card-title>
         <ion-thumbnail>
           <img src= {{weatherImages[this.twelveHourForecast?.[0].WeatherIcon]}}>
         </ion-thumbnail>
@@ -60,7 +60,7 @@
       </ion-card-content>
 
       <ion-card-content class="hourly-stats">
-        <ion-card-title>{{this.twelveHourForecast?.[1].Temperature.Value}}°{{this.twelveHourForecast?.[1].Temperature.Unit}}</ion-card-title>
+        <ion-card-title>{{this.hourTwoForecast | number: '1.0-0'}}°C</ion-card-title>
         <ion-thumbnail>
           <img src= {{weatherImages[this.twelveHourForecast?.[1].WeatherIcon]}}>
         </ion-thumbnail>
@@ -68,7 +68,7 @@
       </ion-card-content>
 
       <ion-card-content class="hourly-stats">
-        <ion-card-title>{{this.twelveHourForecast?.[2].Temperature.Value}}°{{this.twelveHourForecast?.[2].Temperature.Unit}}</ion-card-title>
+        <ion-card-title>{{this.hourThreeForecast | number: '1.0-0'}}°C</ion-card-title>
         <ion-thumbnail>
           <img src= {{weatherImages[this.twelveHourForecast?.[2].WeatherIcon]}}>
         </ion-thumbnail>
@@ -76,7 +76,7 @@
       </ion-card-content>
 
       <ion-card-content class="hourly-stats">
-        <ion-card-title>{{this.twelveHourForecast?.[3].Temperature.Value}}°{{this.twelveHourForecast?.[3].Temperature.Unit}}</ion-card-title>
+        <ion-card-title>{{this.hourFourForecast | number: '1.0-0'}}°C</ion-card-title>
         <ion-thumbnail>
           <img src= {{weatherImages[this.twelveHourForecast?.[3].WeatherIcon]}}>
         </ion-thumbnail>
@@ -84,7 +84,7 @@
       </ion-card-content>
 
       <ion-card-content class="hourly-stats">
-        <ion-card-title>{{this.twelveHourForecast?.[4].Temperature.Value}}°{{this.twelveHourForecast?.[4].Temperature.Unit}}</ion-card-title>
+        <ion-card-title>{{this.hourFiveForecast | number: '1.0-0'}}°C</ion-card-title>
         <ion-thumbnail>
           <img src= {{weatherImages[this.twelveHourForecast?.[4].WeatherIcon]}}>
         </ion-thumbnail>
@@ -92,7 +92,7 @@
       </ion-card-content>
 
       <ion-card-content class="hourly-stats">
-        <ion-card-title>{{this.twelveHourForecast?.[5].Temperature.Value}}°{{this.twelveHourForecast?.[5].Temperature.Unit}}</ion-card-title>
+        <ion-card-title>{{this.hourSixForecast | number: '1.0-0'}}°C</ion-card-title>
         <ion-thumbnail>
           <img src= {{weatherImages[this.twelveHourForecast?.[5].WeatherIcon]}}>
         </ion-thumbnail>
@@ -100,7 +100,7 @@
       </ion-card-content>
 
       <ion-card-content class="hourly-stats">
-        <ion-card-title>{{this.twelveHourForecast?.[6].Temperature.Value}}°{{this.twelveHourForecast?.[6].Temperature.Unit}}</ion-card-title>
+        <ion-card-title>{{this.hourSevenForecast | number: '1.0-0'}}°C</ion-card-title>
         <ion-thumbnail>
           <img src= {{weatherImages[this.twelveHourForecast?.[6].WeatherIcon]}}>
         </ion-thumbnail>
@@ -108,7 +108,7 @@
       </ion-card-content>
 
       <ion-card-content class="hourly-stats">
-        <ion-card-title>{{this.twelveHourForecast?.[7].Temperature.Value}}°{{this.twelveHourForecast?.[7].Temperature.Unit}}</ion-card-title>
+        <ion-card-title>{{this.hourEightForecast | number: '1.0-0'}}°C</ion-card-title>
         <ion-thumbnail>
           <img src= {{weatherImages[this.twelveHourForecast?.[7].WeatherIcon]}}>
         </ion-thumbnail>
@@ -116,7 +116,7 @@
       </ion-card-content>
 
       <ion-card-content class="hourly-stats">
-        <ion-card-title>{{this.twelveHourForecast?.[8].Temperature.Value}}°{{this.twelveHourForecast?.[8].Temperature.Unit}}</ion-card-title>
+        <ion-card-title>{{this.hourNineForecast | number: '1.0-0'}}°C</ion-card-title>
         <ion-thumbnail>
           <img src= {{weatherImages[this.twelveHourForecast?.[8].WeatherIcon]}}>
         </ion-thumbnail>
@@ -124,7 +124,7 @@
       </ion-card-content>
 
       <ion-card-content class="hourly-stats">
-        <ion-card-title>{{this.twelveHourForecast?.[9].Temperature.Value}}°{{this.twelveHourForecast?.[9].Temperature.Unit}}</ion-card-title>
+        <ion-card-title>{{this.hourTenForecast | number: '1.0-0'}}°C</ion-card-title>
         <ion-thumbnail>
           <img src=  {{weatherImages[this.twelveHourForecast?.[9].WeatherIcon]}}>
         </ion-thumbnail>
@@ -132,15 +132,15 @@
       </ion-card-content>
 
       <ion-card-content class="hourly-stats">
-        <ion-card-title>{{this.twelveHourForecast?.[10].Temperature.Value}}°{{this.twelveHourForecast?.[10].Temperature.Unit}}</ion-card-title>
+        <ion-card-title>{{this.hourElevenForecast | number: '1.0-0'}}°C</ion-card-title>
         <ion-thumbnail>
           <img src= {{weatherImages[this.twelveHourForecast?.[10].WeatherIcon]}}>
         </ion-thumbnail>
         <ion-card-title>{{this.twelveHourForecast?.[10].DateTime.slice(11, -9)}}</ion-card-title>
       </ion-card-content>
-      
+
       <ion-card-content class="hourly-stats">
-        <ion-card-title>{{this.twelveHourForecast?.[11].Temperature.Value}}°{{this.twelveHourForecast?.[11].Temperature.Unit}}</ion-card-title>
+        <ion-card-title>{{this.hourTwelveForecast | number: '1.0-0'}}°C</ion-card-title>
         <ion-thumbnail>
           <img src= {{weatherImages[this.twelveHourForecast?.[11].WeatherIcon]}}>
         </ion-thumbnail>
@@ -151,7 +151,7 @@
     <ion-label *ngIf="currentConditions" class="small-header" color="dark">Current Conditions</ion-label>
     <div *ngIf="currentConditions" color="secondary" class="current-conditions">
       <ion-card color="tertiary" class="condition-one">
-        <ion-card-content class="top-content">{{this.currentConditions?.[0].Wind.Speed.Imperial.Value}} m/h</ion-card-content>
+        <ion-card-content class="top-content">{{this.currentConditions?.[0].Wind.Speed.Metric.Value}} km/h</ion-card-content>
         <ion-thumbnail>
           <img class="compass" [ngStyle]="{'transform': 'rotate' + '(' + windDirection + 'deg)'}" src="\assets\north.png">
         </ion-thumbnail>
@@ -164,8 +164,8 @@
         <ion-card-content>{{this.currentConditions?.[0].UVIndex}}</ion-card-content>
       </ion-card>
       <ion-card color="dark" class="condition-four">
-        <ion-card-content class="top-content">{{this.currentConditions?.[0].Pressure.Imperial.Value}}</ion-card-content>
-        <ion-card-content>{{this.currentConditions?.[0].Pressure.Imperial.Unit}}</ion-card-content>
+        <ion-card-content class="top-content">{{this.currentConditions?.[0].Pressure.Metric.Value}}</ion-card-content>
+        <ion-card-content>{{this.currentConditions?.[0].Pressure.Metric.Unit}}</ion-card-content>
       </ion-card>
     </div>
   </ion-content>

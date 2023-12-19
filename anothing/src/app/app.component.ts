@@ -14,10 +14,29 @@ interface WeatherForm {
 export class AppComponent {
   public weatherSearchForm!: FormGroup;
   public weatherLocation: any;
-  public locationKey: string;
+  public locationKey: string ='';
   public currentConditions: any;
   public fiveDayForecast: any;
+  public dayOneForecast: number = 99;
+  public dayTwoForecast: number = 99;
+  public dayThreeForecast: number = 99;
+  public dayFourForecast: number = 99;
+  public dayFiveForecast: number = 99;
+
   public twelveHourForecast: any;
+  public hourOneForecast: number = 99;
+  public hourTwoForecast: number = 99;
+  public hourThreeForecast: number = 99;
+  public hourFourForecast: number = 99;
+  public hourFiveForecast: number = 99;
+  public hourSixForecast: number = 99;
+  public hourSevenForecast: number = 99;
+  public hourEightForecast: number = 99;
+  public hourNineForecast: number = 99;
+  public hourTenForecast: number = 99;
+  public hourElevenForecast: number = 99;
+  public hourTwelveForecast: number = 99;
+
   public windDirection: number = 0;
   public weatherImages: string[] = [
     'assets/weatherIcons/0.png',
@@ -103,6 +122,19 @@ sendToAPIAccu(formValues: WeatherForm ) {
 twelveHourData() {
   this.apiaccuService.getTwelveHourData(this.locationKey).subscribe((data: any) => {
     this.twelveHourForecast = data;
+    this.hourOneForecast = (this.twelveHourForecast?.[0].Temperature.Value - 32) * 5/9;
+    this.hourTwoForecast = (this.twelveHourForecast?.[1].Temperature.Value - 32) * 5/9;
+    this.hourThreeForecast = (this.twelveHourForecast?.[2].Temperature.Value - 32) * 5/9;
+    this.hourFourForecast = (this.twelveHourForecast?.[3].Temperature.Value - 32) * 5/9;
+    this.hourFiveForecast = (this.twelveHourForecast?.[4].Temperature.Value - 32) * 5/9;
+    this.hourSixForecast = (this.twelveHourForecast?.[5].Temperature.Value - 32) * 5/9;
+    this.hourSevenForecast = (this.twelveHourForecast?.[6].Temperature.Value - 32) * 5/9;
+    this.hourEightForecast = (this.twelveHourForecast?.[7].Temperature.Value - 32) * 5/9;
+    this.hourNineForecast = (this.twelveHourForecast?.[8].Temperature.Value - 32) * 5/9;
+    this.hourTenForecast = (this.twelveHourForecast?.[9].Temperature.Value - 32) * 5/9;
+    this.hourElevenForecast = (this.twelveHourForecast?.[10].Temperature.Value - 32) * 5/9;
+    this.hourTwelveForecast = (this.twelveHourForecast?.[11].Temperature.Value - 32) * 5/9;
+
     console.log(this.twelveHourForecast);
   },
 
@@ -133,6 +165,11 @@ currentData() {
 fiveDayData() {
   this.apiaccuService.getFiveDayData(this.locationKey).subscribe((data: any) => {
     this.fiveDayForecast = data;
+    this.dayOneForecast = (this.fiveDayForecast?.DailyForecasts[0].Temperature.Maximum.Value - 32) * 5/9;
+    this.dayTwoForecast = (this.fiveDayForecast?.DailyForecasts[1].Temperature.Maximum.Value - 32) * 5/9;
+    this.dayThreeForecast = (this.fiveDayForecast?.DailyForecasts[2].Temperature.Maximum.Value - 32) * 5/9;
+    this.dayFourForecast = (this.fiveDayForecast?.DailyForecasts[3].Temperature.Maximum.Value - 32) * 5/9;
+    this.dayFiveForecast = (this.fiveDayForecast?.DailyForecasts[4].Temperature.Maximum.Value - 32) * 5/9;
     console.log(this.fiveDayForecast);
     console.log(this.fiveDayForecast?.DailyForecasts[0].Temperature.Maximum.Value);
   },
