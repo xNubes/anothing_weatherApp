@@ -46,7 +46,7 @@ div {
 }
 
 .small-header {
-    padding-top: 1.3rem;
+    padding-top: 0.5rem;
     padding-left: 1rem;
     font-size: 24px;
     font-family: 'Inter', normal !important;
@@ -79,13 +79,15 @@ ion-card-title {
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     height: auto;
 }
 
 .condition-one, .condition-two, .condition-three, .condition-four {
-    width: 10rem;
-    height: 10rem;
+    width: 20vw;
+    height: 20vw;
+    max-width: 9rem;
+    max-height: 9rem;
     border-radius: 180px;
     display: flex;
     flex-direction: column;
@@ -138,10 +140,10 @@ ion-card-title {
 }
 
 ::-webkit-scrollbar {
-    width: 1px;
+    width: 4px;
   }
 
   .text-end {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
   }

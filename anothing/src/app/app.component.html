@@ -1,5 +1,5 @@
 <ion-app>
-  <ion-content color="secondary" class="sidebar">
+  <ion-content color="secondary" class="sidebar ion-hide-md-down">
     <form (ngSubmit)="sendToAPIAccu(weatherSearchForm.value)" [formGroup]="weatherSearchForm">
       <div class="form-group">
         <ion-searchbar color="light" placeholder="Location" class="form-control" aria-describedby="weatherLocation" show-clear-button="focus" showCancelButton="focus" formControlName="location"></ion-searchbar>
@@ -10,125 +10,144 @@
     </form>
 
     <ion-card *ngIf="fiveDayForecast" color="dark" class="daily-forecast">
-      <img class="thumbnail" src="\assets\cloud-sun.png">
+        <img class="thumbnail" src= {{weatherImages[this.fiveDayForecast?.DailyForecasts[0].Day.Icon]}}>
       <ion-label class="daily-label">{{this.fiveDayForecast?.DailyForecasts[0].Temperature.Maximum.Value}}°{{this.fiveDayForecast?.DailyForecasts[0].Temperature.Maximum.Unit}}</ion-label>
     </ion-card>
 
     <ion-card *ngIf="fiveDayForecast" color="dark" class="daily-forecast">
-      <img class="thumbnail" src="\assets\cloud-sun.png">
+      <img class="thumbnail" src= {{weatherImages[this.fiveDayForecast?.DailyForecasts[1].Day.Icon]}}>
       <ion-label class="daily-label">{{this.fiveDayForecast?.DailyForecasts[1].Temperature.Maximum.Value}}°{{this.fiveDayForecast?.DailyForecasts[1].Temperature.Maximum.Unit}}</ion-label>
     </ion-card>
 
     <ion-card *ngIf="fiveDayForecast" color="dark" class="daily-forecast">
-      <img class="thumbnail" src="\assets\cloud-sun.png">
+      <img class="thumbnail" src= {{weatherImages[this.fiveDayForecast?.DailyForecasts[2].Day.Icon]}}>
       <ion-label class="daily-label">{{this.fiveDayForecast?.DailyForecasts[2].Temperature.Maximum.Value}}°{{this.fiveDayForecast?.DailyForecasts[2].Temperature.Maximum.Unit}}</ion-label>
     </ion-card>
 
     <ion-card *ngIf="fiveDayForecast" color="dark" class="daily-forecast">
-      <img class="thumbnail" src="\assets\cloud-sun.png">
+      <img class="thumbnail" src= {{weatherImages[this.fiveDayForecast?.DailyForecasts[3].Day.Icon]}}>
       <ion-label class="daily-label">{{this.fiveDayForecast?.DailyForecasts[3].Temperature.Maximum.Value}}°{{this.fiveDayForecast?.DailyForecasts[3].Temperature.Maximum.Unit}}</ion-label>
     </ion-card>
 
     <ion-card *ngIf="fiveDayForecast" color="dark" class="daily-forecast">
-      <img class="thumbnail" src="\assets\cloud-sun.png">
+      <img class="thumbnail" src= {{weatherImages[this.fiveDayForecast?.DailyForecasts[4].Day.Icon]}}>
       <ion-label class="daily-label">{{this.fiveDayForecast?.DailyForecasts[4].Temperature.Maximum.Value}}°{{this.fiveDayForecast?.DailyForecasts[4].Temperature.Maximum.Unit}}</ion-label>
     </ion-card>
   </ion-content>
 
   <ion-content color="secondary" class="main-content">
+    <form class="ion-show-md-down ion-hide-md-up" (ngSubmit)="sendToAPIAccu(weatherSearchForm.value)" [formGroup]="weatherSearchForm">
+      <div class="form-group">
+        <ion-searchbar color="light" placeholder="Location" class="form-control" aria-describedby="weatherLocation" show-clear-button="focus" showCancelButton="focus" formControlName="location"></ion-searchbar>
+      </div>
+      <div class="text-end">
+        <ion-button class="search-button" type="submit" color="tertiary">Search</ion-button>
+      </div>
+    </form>
     <ion-card *ngIf="currentConditions" color="dark" class="current-weather">
-      <img class="big-thumbnail" src="\assets\cloud-sun.png">
+      <img class="big-thumbnail" src= {{weatherImages[this.currentConditions?.[0].WeatherIcon]}}>
       <ion-card-title>{{this.currentConditions?.[0].Temperature.Imperial.Value}}°{{this.currentConditions?.[0].Temperature.Imperial.Unit}}</ion-card-title>
     </ion-card>
+
     <ion-label *ngIf="twelveHourForecast" class="small-header" color="dark">Hourly Forecast</ion-label>
     <ion-card *ngIf="twelveHourForecast" color="dark" class="hourly-forecast">
       <ion-card-content class="hourly-stats">
         <ion-card-title>{{this.twelveHourForecast?.[0].Temperature.Value}}°{{this.twelveHourForecast?.[0].Temperature.Unit}}</ion-card-title>
         <ion-thumbnail>
-          <img src="\assets\cloud-sun.png">
+          <img src= {{weatherImages[this.twelveHourForecast?.[0].WeatherIcon]}}>
         </ion-thumbnail>
         <ion-card-title>{{this.twelveHourForecast?.[0].DateTime.slice(11, -9)}}</ion-card-title>
       </ion-card-content>
+
       <ion-card-content class="hourly-stats">
         <ion-card-title>{{this.twelveHourForecast?.[1].Temperature.Value}}°{{this.twelveHourForecast?.[1].Temperature.Unit}}</ion-card-title>
         <ion-thumbnail>
-          <img src="\assets\cloud-sun.png">
+          <img src= {{weatherImages[this.twelveHourForecast?.[1].WeatherIcon]}}>
         </ion-thumbnail>
         <ion-card-title>{{this.twelveHourForecast?.[1].DateTime.slice(11, -9)}}</ion-card-title>
       </ion-card-content>
+
       <ion-card-content class="hourly-stats">
         <ion-card-title>{{this.twelveHourForecast?.[2].Temperature.Value}}°{{this.twelveHourForecast?.[2].Temperature.Unit}}</ion-card-title>
         <ion-thumbnail>
-          <img src="\assets\cloud-sun.png">
+          <img src= {{weatherImages[this.twelveHourForecast?.[2].WeatherIcon]}}>
         </ion-thumbnail>
         <ion-card-title>{{this.twelveHourForecast?.[2].DateTime.slice(11, -9)}}</ion-card-title>
       </ion-card-content>
+
       <ion-card-content class="hourly-stats">
         <ion-card-title>{{this.twelveHourForecast?.[3].Temperature.Value}}°{{this.twelveHourForecast?.[3].Temperature.Unit}}</ion-card-title>
         <ion-thumbnail>
-          <img src="\assets\cloud-sun.png">
+          <img src= {{weatherImages[this.twelveHourForecast?.[3].WeatherIcon]}}>
         </ion-thumbnail>
         <ion-card-title>{{this.twelveHourForecast?.[3].DateTime.slice(11, -9)}}</ion-card-title>
       </ion-card-content>
+
       <ion-card-content class="hourly-stats">
         <ion-card-title>{{this.twelveHourForecast?.[4].Temperature.Value}}°{{this.twelveHourForecast?.[4].Temperature.Unit}}</ion-card-title>
         <ion-thumbnail>
-          <img src="\assets\cloud-sun.png">
+          <img src= {{weatherImages[this.twelveHourForecast?.[4].WeatherIcon]}}>
         </ion-thumbnail>
         <ion-card-title>{{this.twelveHourForecast?.[4].DateTime.slice(11, -9)}}</ion-card-title>
       </ion-card-content>
+
       <ion-card-content class="hourly-stats">
         <ion-card-title>{{this.twelveHourForecast?.[5].Temperature.Value}}°{{this.twelveHourForecast?.[5].Temperature.Unit}}</ion-card-title>
         <ion-thumbnail>
-          <img src="\assets\cloud-sun.png">
+          <img src= {{weatherImages[this.twelveHourForecast?.[5].WeatherIcon]}}>
         </ion-thumbnail>
         <ion-card-title>{{this.twelveHourForecast?.[5].DateTime.slice(11, -9)}}</ion-card-title>
       </ion-card-content>
+
       <ion-card-content class="hourly-stats">
         <ion-card-title>{{this.twelveHourForecast?.[6].Temperature.Value}}°{{this.twelveHourForecast?.[6].Temperature.Unit}}</ion-card-title>
         <ion-thumbnail>
-          <img src="\assets\cloud-sun.png">
+          <img src= {{weatherImages[this.twelveHourForecast?.[6].WeatherIcon]}}>
         </ion-thumbnail>
         <ion-card-title>{{this.twelveHourForecast?.[6].DateTime.slice(11, -9)}}</ion-card-title>
       </ion-card-content>
+
       <ion-card-content class="hourly-stats">
         <ion-card-title>{{this.twelveHourForecast?.[7].Temperature.Value}}°{{this.twelveHourForecast?.[7].Temperature.Unit}}</ion-card-title>
         <ion-thumbnail>
-          <img src="\assets\cloud-sun.png">
+          <img src= {{weatherImages[this.twelveHourForecast?.[7].WeatherIcon]}}>
         </ion-thumbnail>
         <ion-card-title>{{this.twelveHourForecast?.[7].DateTime.slice(11, -9)}}</ion-card-title>
       </ion-card-content>
+
       <ion-card-content class="hourly-stats">
         <ion-card-title>{{this.twelveHourForecast?.[8].Temperature.Value}}°{{this.twelveHourForecast?.[8].Temperature.Unit}}</ion-card-title>
         <ion-thumbnail>
-          <img src="\assets\cloud-sun.png">
+          <img src= {{weatherImages[this.twelveHourForecast?.[8].WeatherIcon]}}>
         </ion-thumbnail>
         <ion-card-title>{{this.twelveHourForecast?.[8].DateTime.slice(11, -9)}}</ion-card-title>
       </ion-card-content>
+
       <ion-card-content class="hourly-stats">
         <ion-card-title>{{this.twelveHourForecast?.[9].Temperature.Value}}°{{this.twelveHourForecast?.[9].Temperature.Unit}}</ion-card-title>
         <ion-thumbnail>
-          <img src="\assets\cloud-sun.png">
+          <img src=  {{weatherImages[this.twelveHourForecast?.[9].WeatherIcon]}}>
         </ion-thumbnail>
         <ion-card-title>{{this.twelveHourForecast?.[9].DateTime.slice(11, -9)}}</ion-card-title>
       </ion-card-content>
+
       <ion-card-content class="hourly-stats">
         <ion-card-title>{{this.twelveHourForecast?.[10].Temperature.Value}}°{{this.twelveHourForecast?.[10].Temperature.Unit}}</ion-card-title>
         <ion-thumbnail>
-          <img src="\assets\cloud-sun.png">
+          <img src= {{weatherImages[this.twelveHourForecast?.[10].WeatherIcon]}}>
         </ion-thumbnail>
         <ion-card-title>{{this.twelveHourForecast?.[10].DateTime.slice(11, -9)}}</ion-card-title>
       </ion-card-content>
+      
       <ion-card-content class="hourly-stats">
         <ion-card-title>{{this.twelveHourForecast?.[11].Temperature.Value}}°{{this.twelveHourForecast?.[11].Temperature.Unit}}</ion-card-title>
         <ion-thumbnail>
-          <img src="\assets\cloud-sun.png">
+          <img src= {{weatherImages[this.twelveHourForecast?.[11].WeatherIcon]}}>
         </ion-thumbnail>
         <ion-card-title>{{this.twelveHourForecast?.[11].DateTime.slice(11, -9)}}</ion-card-title>
       </ion-card-content>
+  </ion-card>
 
-
-    </ion-card>
     <ion-label *ngIf="currentConditions" class="small-header" color="dark">Current Conditions</ion-label>
     <div *ngIf="currentConditions" color="secondary" class="current-conditions">
       <ion-card color="tertiary" class="condition-one">
@@ -147,7 +166,6 @@
       <ion-card color="dark" class="condition-four">
         <ion-card-content class="top-content">{{this.currentConditions?.[0].Pressure.Imperial.Value}}</ion-card-content>
         <ion-card-content>{{this.currentConditions?.[0].Pressure.Imperial.Unit}}</ion-card-content>
-
       </ion-card>
     </div>
   </ion-content>
