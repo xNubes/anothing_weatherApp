@@ -151,7 +151,7 @@
     <ion-label *ngIf="currentConditions" class="small-header" color="dark">Current Conditions</ion-label>
     <div *ngIf="currentConditions" color="secondary" class="current-conditions">
       <ion-card color="tertiary" class="condition-one">
-        <ion-card-content class="top-content">{{this.currentConditions?.[0].Wind.Speed.Metric.Value}} km/h</ion-card-content>
+        <ion-card-content class="top-content">{{this.currentConditions?.[0].Wind.Speed.Metric.Value | number: '1.0-0'}} km/h</ion-card-content>
         <ion-thumbnail>
           <img class="compass" [ngStyle]="{'transform': 'rotate' + '(' + windDirection + 'deg)'}" src="\assets\north.png">
         </ion-thumbnail>
